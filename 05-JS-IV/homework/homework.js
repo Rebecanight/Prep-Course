@@ -148,14 +148,14 @@ function pasarUsuarioAPremium (usuarios) {   // 12
   // Devuelve el array de usuarios
   // Tu código:
   //   amigos: ['Ben', 'Austen', 'Ryan', 'Mike', 'Young'],
-  // posicion *  i= 0      2       3       4       5
+  // posicion *  i= 0      1       2       3       4
   for(var i = 0; i < usuarios.length; i++) {
     usuarios[i].esPremium = true;
   }
   return usuarios;
 }
 
-function sumarLikesDeUsuario (usuario) {    // 13
+function sumarLikesDeUsuario (usuario) {    
   // "usuario" tiene una propiedad llamada "posts" que es un array
   // "posts" es un array de objetos "post"
   // Cada objeto "post" tiene una propiedad llamada *** "likes" *** que es un entero (int/integer)
@@ -167,23 +167,12 @@ function sumarLikesDeUsuario (usuario) {    // 13
     //     likes: 4
     //   }]
     // };
-    // ejemplo de solucion 1:
-  //var suma = 0;
-  //for(var i = 0; i < usuario.posts.length; i++) {
-    //suma = suma + usuario.posts[i].likes;
-  //}
-  //return suma;
-  // Solucion 2:
-  // post: [post1, post2, post3, .... postx]
-// post: [post1.like = 2, post2.like = 1, post3.like = 5, .... postx]
-var totalLike = 0  // 2 + 1 + 5 = 8
-for (var i = 0; i< usuario.posts.length; i++){
-totalLike += usuario.post[i].likes;
+    var suma = 0;
+    for(var i = 0; i < usuario.posts.length; i++) {
+      suma = suma + usuario.posts[i].likes;
+    }
+    return suma;
 }
-return totalLike;
-}
-// nota, += es abreviacion de totalLike = totalLike + usuario.post[i].likes;
-//                         desde aqui: |      +=      |
 
 function agregarMetodoCalculoDescuento (producto) {     // 14
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
